@@ -19,10 +19,15 @@ public class PlayerMovement1 : MonoBehaviour
     void Update()
     {
         Movement();
+        Jump();
         
     }
 
     public void Movement(){
         transform.Translate(Vector3.right * speed * _oldInput.horizontal * Time.deltaTime);
+    }
+
+    public void Jump(){
+        transform.Translate(Vector3.up * speed * _oldInput.vertical * Time.deltaTime);
     }
 }

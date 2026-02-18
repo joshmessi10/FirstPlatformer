@@ -5,6 +5,7 @@ public class OldInput : MonoBehaviour
 {
     // Se declaran las variables
     [HideInInspector] public float horizontal;
+    [HideInInspector] public float vertical;
 
     // Se llama cada frame
     void Update()
@@ -20,9 +21,7 @@ public class OldInput : MonoBehaviour
     {
         // Se almacena el eje raw (-1, 0- 1) del eje horizontal (ver en Unity "Axis"), en la variable.
         horizontal = Input.GetAxis("Horizontal");
-
-        // Se escribe en consola el resultado
-        Debug.Log(horizontal);
+        vertical = Input.GetAxis("Vertical");
 
     }
 
