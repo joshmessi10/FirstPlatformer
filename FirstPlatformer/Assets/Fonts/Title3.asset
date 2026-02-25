@@ -60,9 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Title3
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -1036779629
   material: {fileID: 2418054375899770848}
-  materialHashCode: 0
+  materialHashCode: 1314939219
   m_Version: 1.1.0
   m_SourceFontFileGUID: 16062f3ede265134a9fa2e3cb91d7d1b
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 16062f3ede265134a9fa2e3cb91d7d1b, type: 3}
@@ -2766,9 +2766,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
