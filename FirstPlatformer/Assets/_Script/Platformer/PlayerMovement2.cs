@@ -30,6 +30,7 @@ public class PlayerMovement2 : MonoBehaviour
     public void Movement(){
         //transform.Translate(Vector3.right * speed * _newInput.inputX * Time.deltaTime);
         _rb.velocity = new Vector2(speed * _newInput.inputX, _rb.velocity.y);
+        Flip();
         
     }
 
@@ -39,8 +40,13 @@ public class PlayerMovement2 : MonoBehaviour
 
     private void Flip()
     {
-
-        _spriteRenderer.flipX = _newInput.inputX < 0;
+        if(_newInput.inputX > 0){
+            transform.rotation = Quaternion.Euler(0,0,0);
+        }
+        else if(_newInput.inputX < 0){
+            transform.rotation = Quaternion.Euler(0,180,0);
+        }
+        //_spriteRenderer.flipX = _newInput.inputX < 0;
 
     }
 
