@@ -32,6 +32,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ShootColor",
+                    "type": "Button",
+                    "id": "399bb129-adbd-4615-9434-5797874d6475",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -92,12 +101,12 @@
                 },
                 {
                     "name": "",
-                    "id": "d8f38a37-e486-4488-b36c-7e7fded367c5",
+                    "id": "a4534708-a35e-4f90-990e-b7adb99a8aa3",
                     "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "ShootColor",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

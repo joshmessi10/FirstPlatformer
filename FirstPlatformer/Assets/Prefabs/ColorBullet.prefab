@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 6203945916258799631}
   - component: {fileID: 8714112376020734743}
   - component: {fileID: 8159097012998315649}
-  - component: {fileID: 2750848391917359216}
+  - component: {fileID: 5602283701101508071}
   m_Layer: 0
   m_Name: ColorBullet
   m_TagString: Bullet
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2750848391917359216
+--- !u!114 &5602283701101508071
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,9 +158,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6571484916240819416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bfa49feccd80694096a64645828dcc4, type: 3}
+  m_Script: {fileID: 11500000, guid: 688fda97e400ee34b8ca23b379b23a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  isColorBullet: 0
-  colorOnImpact: {r: 1, g: 0.5196552, b: 0, a: 1}
+  speed: 10
+  colorOnImpact: {r: 1, g: 0, b: 1, a: 1}

@@ -19,6 +19,14 @@ public class BulletPool : MonoBehaviour
             bullets.Add(obj);
         }
     }
+    void Start()
+    {
+        foreach (var bullet in bullets)
+        {
+            bullet.SetActive(true);
+            bullet.SetActive(false);
+        }
+    }
 
     public GameObject GetBullet()
     {

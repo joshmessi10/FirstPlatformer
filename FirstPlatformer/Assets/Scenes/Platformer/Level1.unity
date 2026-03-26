@@ -390,7 +390,7 @@ Transform:
   m_GameObject: {fileID: 48807787}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.43, y: -1.2, z: -10.041909}
+  m_LocalPosition: {x: 17.2, y: -2.92, z: -10.041909}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -771,6 +771,7 @@ GameObject:
   - component: {fileID: 455780010}
   - component: {fileID: 455780011}
   - component: {fileID: 455780012}
+  - component: {fileID: 455780013}
   m_Layer: 0
   m_Name: EnemySprite
   m_TagString: Enemy
@@ -851,7 +852,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -634740914, guid: ba280226fa3dfb4468808c7ad1923691, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.103773475, b: 0.103773475, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -978,6 +979,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.61473787, y: 0.1917311}
   m_EdgeRadius: 0
+--- !u!95 &455780013
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455780006}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 283bd9a8c260df74597062a6fcd8b114, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &475574625
 GameObject:
   m_ObjectHideFlags: 0
@@ -3622,7 +3644,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1682781633, guid: ba280226fa3dfb4468808c7ad1923691, type: 3}
       - {fileID: -314297465, guid: ba280226fa3dfb4468808c7ad1923691, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 20, y: -1, z: 0}
@@ -3937,7 +3959,7 @@ Transform:
   m_GameObject: {fileID: 1516842519}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.43, y: -1.2, z: -10.041909}
+  m_LocalPosition: {x: 17.2, y: -2.92, z: -10.041909}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5073,7 +5095,7 @@ Transform:
   m_GameObject: {fileID: 2142605828}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.43, y: -1.2, z: -0.04190959}
+  m_LocalPosition: {x: 17.2, y: -2.92, z: -0.04190959}
   m_LocalScale: {x: 2.5, y: 2.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5141,6 +5163,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_ActionId: b949ebac-bad2-4c5e-8e99-c73b600eb139
+    m_ActionName: Player/Shoot[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 2142605839}
         m_TargetAssemblyTypeName: PlayerShoot, Assembly-CSharp
         m_MethodName: ShootColorBullet
@@ -5153,8 +5179,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: b949ebac-bad2-4c5e-8e99-c73b600eb139
-    m_ActionName: Player/Shoot[/Keyboard/j]
+    m_ActionId: 399bb129-adbd-4615-9434-5797874d6475
+    m_ActionName: Player/ShootColor[/Keyboard/k]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -5234,7 +5260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4caae21a8f04e96419dba62969552786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 15
+  bounceForce: 10
   _rb: {fileID: 2142605829}
 --- !u!114 &2142605839
 MonoBehaviour:

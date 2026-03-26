@@ -3,65 +3,76 @@ using UnityEngine.InputSystem;
 
 public class PlayerShoot : MonoBehaviour
 {
-    public BulletPool bulletPool; // pool de balas
-    public BulletPool colorBulletPool;
+    [Header("Pools")]
+    public BulletPool bulletPool;        // pool de balas normales
+    public BulletPool colorBulletPool;   // pool de balas de color
+
+    [Header("Disparo")]
     public Transform startPos;
-    public int maxAmmo = 5;       // máximo de balas que puede tener
-    private int currentAmmo = 0;  // balas disponibles actualmente
+
+    [Header("Munición")]
+    public int maxAmmo = 5;
+    private int currentAmmo = 0;
 
     void Start()
     {
-        currentAmmo = 3; // empieza sin munición
+        currentAmmo = 3; // munición inicial
     }
 
-    // Método para disparar con Input Action (tecla J)
+    // Disparo normal (tecla J)
     public void Shoot(InputAction.CallbackContext context)
     {
-        if (context.started && currentAmmo > 0)
+        if (context.performed && currentAmmo > 0)
         {
             GameObject bullet = bulletPool.GetBullet();
+
             if (bullet != null)
             {
                 bullet.transform.position = startPos.position;
                 bullet.transform.rotation = startPos.rotation;
                 bullet.SetActive(true);
-                currentAmmo--; // consumimos una bala
+
+                currentAmmo--;
+            }
+            else
+            {
+                Debug.Log("No hay balas normales disponibles en el pool");
             }
         }
     }
 
+    // Disparo de color (tecla K)
     public void ShootColorBullet(InputAction.CallbackContext context)
     {
-        if (context.started && currentAmmo > 0) // consumimos munición normal
+        if (context.performed && currentAmmo > 0)
         {
-            GameObject bullet = colorBulletPool.GetBullet(); // o el pool correcto
+            GameObject bullet = colorBulletPool.GetBullet();
+
             if (bullet != null)
             {
                 bullet.transform.position = startPos.position;
                 bullet.transform.rotation = startPos.rotation;
-
-                Bullet bulletScript = bullet.GetComponent<Bullet>();
-                if (bulletScript != null)
-                {
-                    bulletScript.isColorBullet = true;
-                    bulletScript.colorOnImpact = Color.magenta; // o el color que quieras
-                }
-
                 bullet.SetActive(true);
-                currentAmmo--; // consumimos una bala del inventario
+
+                currentAmmo--;
+            }
+            else
+            {
+                Debug.Log("No hay balas de color disponibles en el pool");
             }
         }
     }
 
-    // Método para recoger munición del suelo
+    // Recoger munición
     public void AddAmmo(int amount = 1)
     {
         currentAmmo += amount;
+
         if (currentAmmo > maxAmmo)
             currentAmmo = maxAmmo;
     }
 
-    // Opcional: para mostrar la munición actual
+    // Para UI o debug
     public int GetCurrentAmmo()
     {
         return currentAmmo;

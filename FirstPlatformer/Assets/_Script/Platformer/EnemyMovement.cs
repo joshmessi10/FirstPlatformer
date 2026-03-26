@@ -19,12 +19,18 @@ public class EnemyMovement : MonoBehaviour
 
     [HideInInspector] public bool canMove;
 
+    private Animator animator;
+    private Collider2D col;
+    private bool isDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         currentPoint = pointB.transform;
         canMove = true;
+        animator = GetComponent<Animator>();
+        col = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -68,6 +74,32 @@ public class EnemyMovement : MonoBehaviour
             rb.velocity = new Vector2(-speed, 0);
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
+    }
+
+    public void Die()
+    {
+        if (isDead) return;
+
+        isDead = true;
+        canMove = false;
+
+        // Detener movimiento
+        rb.velocity = Vector2.zero;
+
+        // Desactivar colisiones
+        col.enabled = false;
+
+        // Opcional: apagar física completamente
+        rb.simulated = false;
+
+        // Activar animación
+        if (animator != null)
+        {
+            animator.SetTrigger("Die");
+        }
+
+        // Destruir después de la animación
+        Destroy(gameObject, 1.5f);
     }
 
 }

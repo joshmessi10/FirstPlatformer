@@ -13,8 +13,11 @@ public class PlayerAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("Enemy")){
             _rb.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
-            collision.GetComponent<EnemyMovement>().canMove = false;
-            Destroy(collision.gameObject, 1.5f);
+            EnemyMovement enemy = collision.GetComponent<EnemyMovement>();
+            if (enemy != null)
+            {
+                enemy.Die();
+            }
         }
 
     }
